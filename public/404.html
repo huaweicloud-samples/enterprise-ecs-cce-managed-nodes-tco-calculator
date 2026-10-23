@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CCE 托管节点 TCO 计算器</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitLab Pages
+      // https://gitlab.com/help/user/project/pages/redirects
+      // Redirects 404 requests to the index page with path info preserved as a query parameter
+      (function() {
+        var pathSegmentsToKeep = 0;
+        var l = window.location;
+
+        // Validate we're on the expected origin to prevent open redirect
+        var origin = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
+        var pathParts = l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/');
+        var remainingPath = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/');
+
+        // Sanitize path segments - only allow safe URL characters
+        var sanitizedPath = remainingPath.replace(/[^a-zA-Z0-9\-._~/]/g, '');
+        var sanitizedSearch = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';
+
+        var redirectUrl = origin + pathParts + '/?/' + sanitizedPath.replace(/&/g, '~and~') + sanitizedSearch + l.hash;
+
+        l.replace(redirectUrl);
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
